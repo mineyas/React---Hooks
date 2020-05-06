@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+function Counter() {
+  // Déclare une nouvelle variable d'état, qu’on va appeler « count »
+  // Déclare une fonction setCount qui permet de modifier la valeur de count
+  const [count, setCount] = useState(0);
+
+  const handleChan = yas => {
+    setCount(Number(yas.target.value))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Le compteur est  à WOOOOOOOOOOOOOOOOOOOOOOOW: {count} </p>
+      <input  onChange={handleChan}></input>
+      <button onClick={() => setCount(count + 1)}>
+        +1
+      </button>
+      <button onClick={() => setCount(count - 1)}>
+        -1
+      </button>
+      
     </div>
   );
 }
 
-export default App;
+export default Counter;
